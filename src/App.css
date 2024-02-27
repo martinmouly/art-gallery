@@ -1,0 +1,75 @@
+.App {
+  text-align: center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.buttons {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 1rem 4rem;
+  margin-right: 2rem;
+}
+
+.header {
+  border-bottom: 1px solid #ccc; /* Gray line separator */
+  /* Additional styling can be added here */
+}
+
+.ig-logo {
+  margin-top: 0.5rem;
+  width: 1rem;
+  padding: 0.75rem;
+  cursor: pointer;
+}
+
+button {
+  font-size: 10px;
+  background-color: white;
+  border: none;
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 0;
+  position: relative;
+}
+button:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 1px;
+  left: 50%;
+  position: absolute;
+  background: black;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+button:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+.selected {
+  font-weight: 800;
+}
+
+.content { /* display 2x2*/
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 3rem;
+  justify-items: center;
+}
+
+.pic {
+  width: 18rem;
+  height: auto;
+}
