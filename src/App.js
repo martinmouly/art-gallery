@@ -2,7 +2,8 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import emailjs, { init } from "@emailjs/browser";
 import IgLogo from './img/ig-logo.png'
-import Pic from './img/001223810015.jpg'
+import Pic from './img/col/001223810015.jpg'
+import Pic2 from './img/col/001223810006.jpg'
 
 function App() {
   const serviceID = "service_b1seiq9"
@@ -45,7 +46,7 @@ function App() {
       </div>
       <div className='content'>
         <img className='pic' src={Pic}/>
-        <img className='pic' src={Pic}/>
+        <img className='pic' src={Pic2}/>
         <img className='pic' src={Pic}/>
         <img className='pic' src={Pic}/>
         <img className='pic' src={Pic}/>

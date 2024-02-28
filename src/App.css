@@ -2,6 +2,7 @@
   text-align: center;
   background-color: white;
   display: flex;
+  align-items: center;
   flex-direction: column;
   min-height: 100vh;
 }
@@ -11,11 +12,12 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
-  padding: 1.75rem 4rem;
+  padding: 2rem 4rem;
   margin-right: 2rem;
 }
 
 .header {
+  width: 100%;
   border-bottom: 1px solid #ccc; /* Gray line separator */
   /* Additional styling can be added here */
 }
@@ -62,14 +64,24 @@ button:hover:after {
 }
 
 .content { /* display 2x2*/
-  margin-top: 0.5rem;
+  margin-top: 2rem;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 3rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6rem;
   justify-items: center;
 }
 
 .pic {
-  width: 18rem;
+  width: 32rem;
   height: auto;
+}
+
+/* if phone change content to 1x4 */
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .pic {
+    width: 18rem;
+  }
 }
