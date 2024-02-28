@@ -61,8 +61,14 @@ function App() {
       {imageList.map((image, index) => (
         <img key={index} src={image} className='pic' />
       ))}
+      {imageList.map((image, index) => (
+        <img key={index} src={image} className='pic' />
+      ))}
+      
       </div>
-
+      <div className='footer'>
+          © 2024 Martin Mouly
+      </div>
     </div>
   );
 }

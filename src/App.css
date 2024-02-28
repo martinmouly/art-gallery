@@ -19,7 +19,15 @@
 .header {
   width: 100%;
   border-bottom: 1px solid #ccc; /* Gray line separator */
-  /* Additional styling can be added here */
+}
+
+.footer {
+  font-size: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #929292;
+  width: 100%;
+  margin-top: 10rem;
+  margin-bottom: 1rem;
 }
 
 .ig-logo {
