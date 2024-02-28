@@ -72,15 +72,21 @@ button:hover:after {
 }
 
 .pic {
-  width: 32rem;
+  width: 28rem;
   height: auto;
 }
 
 /* if phone change content to 1x4 */
-@media (max-width: 768px) {
+@media (max-width: 1025px) {
   .content {
     grid-template-columns: repeat(1, 1fr);
   }
+  .pic {
+    width: 24rem;
+  }
+}
+
+@media (max-width: 500px) {
   .pic {
     width: 18rem;
   }

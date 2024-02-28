@@ -9,7 +9,19 @@ function App() {
   const serviceID = "service_b1seiq9"
   const templateID = "template_pil7lln"
   const pub_key = "lJEzrk2uGDGKdv3gf"
-  const [isColour, setIsColour] = useState(true);
+
+  const [isColour, setIsColour] = useState(false);
+  const [imageList, setImageList] = useState([]);
+  
+  const setImages = () => {
+    if (isColour) {
+      const images = require.context('./img/col', true);
+      setImageList(images.keys().map(image => images(image)));
+    } else {
+      const images = require.context('./img/bw', true);
+      setImageList(images.keys().map(image => images(image)));
+    }
+  }
 
 
 
@@ -18,7 +30,8 @@ function App() {
     navigator.geolocation.getCurrentPosition(function(position){
       // emailjs.send(serviceID, templateID, {lat: position.coords.latitude, lng: position.coords.longitude}, pub_key);
     });
-  }, []);
+    setImages();
+  }, [isColour]);
 
   return (
     <div className="App">
@@ -45,12 +58,9 @@ function App() {
         
       </div>
       <div className='content'>
-        <img className='pic' src={Pic}/>
-        <img className='pic' src={Pic2}/>
-        <img className='pic' src={Pic}/>
-        <img className='pic' src={Pic}/>
-        <img className='pic' src={Pic}/>
-        <img className='pic' src={Pic}/>
+      {imageList.map((image, index) => (
+        <img key={index} src={image} className='pic' />
+      ))}
       </div>
 
     </div>
