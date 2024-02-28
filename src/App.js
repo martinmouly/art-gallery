@@ -2,8 +2,6 @@ import './App.css';
 import { useEffect, useState } from 'react';
 import emailjs, { init } from "@emailjs/browser";
 import IgLogo from './img/ig-logo.png'
-import Pic from './img/col/001223810015.jpg'
-import Pic2 from './img/col/001223810006.jpg'
 
 function App() {
   const serviceID = "service_b1seiq9"
@@ -16,10 +14,12 @@ function App() {
   const setImages = () => {
     if (isColour) {
       const images = require.context('./img/col', true);
-      setImageList(images.keys().map(image => images(image)));
+      const array = images.keys().map(image => images(image));
+      setImageList(array.sort(() => 0.5 - Math.random()));
     } else {
       const images = require.context('./img/bw', true);
-      setImageList(images.keys().map(image => images(image)));
+      const array = images.keys().map(image => images(image));
+      setImageList(array.sort(() => 0.5 - Math.random()));
     }
   }
 
@@ -61,10 +61,6 @@ function App() {
       {imageList.map((image, index) => (
         <img key={index} src={image} className='pic' />
       ))}
-      {imageList.map((image, index) => (
-        <img key={index} src={image} className='pic' />
-      ))}
-      
       </div>
       <div className='footer'>
           © 2024 Martin Mouly
