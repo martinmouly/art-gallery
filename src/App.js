@@ -63,7 +63,7 @@ function App() {
       ))}
       </div>
       <div className='footer'>
-          © 2024 Martin Mouly
+          © 2024 Martino
       </div>
     </div>
   );
