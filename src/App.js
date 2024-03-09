@@ -1,13 +1,8 @@
 import './App.css';
 import { useEffect, useState } from 'react';
-import emailjs, { init } from "@emailjs/browser";
 import IgLogo from './img/ig-logo.png'
 
 function App() {
-  const serviceID = "service_b1seiq9"
-  const templateID = "template_pil7lln"
-  const pub_key = "lJEzrk2uGDGKdv3gf"
-
   const [isColour, setIsColour] = useState(false);
   const [imageList, setImageList] = useState([]);
   
@@ -27,9 +22,6 @@ function App() {
 
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(function(position){
-      // emailjs.send(serviceID, templateID, {lat: position.coords.latitude, lng: position.coords.longitude}, pub_key);
-    });
     setImages();
   }, [isColour]);
 
